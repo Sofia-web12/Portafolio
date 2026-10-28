@@ -1,151 +1,273 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-    />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="../static/css/style.css" />
-    <title>Portafolio</title>
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header__nav main-nav">
-        <ul class="main-nav__list main-list">
-          <li class="main-list__item list-item">
-            <a class="list-item__link" href="#home">HOME</a>
-          </li>
-          <li class="main-list__item list-item">
-            <a class="list-item__link" href="#about">ABOUT</a>
-          </li>
-          <li class="main-list__item list-item">
-            <a class="list-item__link" href="#skills">MY SKILLS</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main class="main">
-      <!-- Vista previa -->
-      <section class="main__home home" id="home">
-        <h1 class="home__title">SOFIA NARIO</h1>
-        <p class="home__subtitle">WEB-DEVELOPER, PYTHON PROGRAMMER</p>
-      </section>
-      <!-- Acerca de mí -->
-      <section class="main__about about" id="about">
-        <h2 class="about__title">ABOUT ME</h2>
-        <div class="about__info info-block">
-          <p class="info-block__text">
-            Me gusta el diseño web y la programación en Python porque me
-            permiten crear proyectos creativos y aprender nuevas habilidades.
-            Disfruto desarrollar páginas web con HTML y CSS, buscando que sean
-            atractivas y funcionales. En mi tiempo libre me gusta jugar 
-            voleibol, compartir con mis amigos y seguir aprendiendo sobre 
-            programación para mejorar cada día.
-          </p>
-          <img
-            class="info-block__img"
-            src="../static/img/profile.png"
-            alt="me"
-            width="250"
-            height="250"
-          />
-        </div>
-      </section>
-      <!-- Sección de competencias -->
-      <section class="main__skills skills" id="skills">
-        <h2 class="skills__title">MY SKILLS</h2>
-        <form action="/" method="POST">
-          <ul class="skills__list skills-list">
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/python.png"
-                alt="python"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">Skill info</span>
-              <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
-            </li>
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/discord.png"
-                alt="discord"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">Skill info</span>
-              <input class="skill__button" type="submit" name="button_discord" value="SHOW PROJECT">
-            </li>
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/html.png"
-                alt="html"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">Skill info</span>
-              <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
-            </li>
-            <li class="skills-list__skill skill">
-              <img
-                class="skill__img"
-                src="../static/img/db.webp"
-                alt="SQL"
-                width="150"
-                height="150"
-              />
-              <span class="skill__info">Skill info</span>
-              <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
-            </li>
-          </ul>
-        </form>
-        {% if button_python%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
-              <a class="project__link" href="">Abierto en GitHub</a>
-          </div>
-        {% endif %}
-        {% if button_discord%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/discort.png" alt="project" width="500">
-              <a class="project__link" href="">Abierto en GitHub</a>
-          </div>
-        {% endif %}
-        {% if button_html%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/meme_ge.png" alt="project" width="500">
-              <a class="project__link" href="">Abierto en GitHub</a>
-          </div>
-        {% endif %}
-        {% if button_db%}
-          <div class="skills__project project" id="project">
-              <img class="project__img" src="../static/img/bd_proyect.png" alt="project" width="500">
-              <a class="project__link" href="">Abierto en GitHub</a>
-          </div>
-        {% endif %}
-      </section>
-      <!-- Formulario de contacto -->
-      <section class="main__feedback feedback" id="feedback">
-        <h2 class="feedback__title">FEEDBACK</h2>
-        <form action="" method="POST" class="feedback__form form">
-          <label for="email">
-            <input type="email" class="form__input" name="email" id="email" placeholder="Введите E-mail" required>
-          </label>
-          <label for="text">
-            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Comment"></textarea>
-          </label>
-          <button class="form__button" type="submit">SEND</button>
-        </form>
-      </section>
-    </main>
-    <!-- Pie de página con enlaces a redes sociales -->
-    <footer>
 
-    </footer>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofía Nario | Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="#inicio" class="logo">&lt;SN.dev/&gt;</a>
+
+    <nav>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto" class="nav-button">Contacto ↗</a>
+    </nav>
+</header>
+
+<main>
+    <section class="hero" id="inicio">
+        <div class="hero-text">
+            <p class="eyebrow">PORTAFOLIO DE DESARROLLO</p>
+
+            <h1>Hola, soy<br>
+                <span>Sofía Nario.</span>
+            </h1>
+
+            <h2>Desarrolladora web + Python</h2>
+
+            <p class="description">
+                Me apasiona crear páginas web, explorar la programación
+                y transformar ideas en proyectos digitales.
+                Actualmente sigo desarrollando mis habilidades
+                en diseño web y Python.
+            </p>
+
+            <div class="buttons">
+                <a href="#proyectos" class="button-primary">
+                    Ver mis proyectos ↓
+                </a>
+                <a href="#sobre-mi" class="button-secondary">
+                    Conóceme →
+                </a>
+            </div>
+
+            <p class="technologies-text">
+                HTML · CSS · PYTHON
+            </p>
+        </div>
+
+        <div class="code-card">
+            <div class="code-header">
+                <span class="red"></span>
+                <span class="yellow"></span>
+                <span class="green"></span>
+                <p>mi_portafolio.py</p>
+            </div>
+
+            <div class="code">
+                <p><span class="purple">class</span> Sofia:</p>
+                <p>&nbsp;&nbsp;nombre = <span class="green-text">"Sofía"</span></p>
+                <p>&nbsp;&nbsp;lenguaje = <span class="green-text">"Python"</span></p>
+                <p>&nbsp;&nbsp;web = [<span class="green-text">"HTML"</span>,</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="green-text">"CSS"</span>]</p>
+                <br>
+                <p>&nbsp;&nbsp;<span class="purple">def</span> aprender(self):</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="blue">return</span>
+                    <span class="green-text">"Siempre"</span></p>
+                <p class="cursor">▋</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about section" id="sobre-mi">
+        <div>
+            <p class="eyebrow">01 / PERFIL</p>
+            <h2>Sobre mí<span>.</span></h2>
+        </div>
+
+        <div class="about-content">
+            <h3>La tecnología es una forma de convertir ideas en realidad.</h3>
+
+            <p>
+                Soy Sofía Nario y me interesa el desarrollo web
+                y la programación en Python. Disfruto aprender
+                cómo funcionan las páginas web y cómo crear
+                programas utilizando la lógica de programación.
+            </p>
+
+            <p>
+                Me gusta experimentar con HTML y CSS para diseñar
+                páginas atractivas y funcionales, además de practicar
+                Python para desarrollar mis habilidades.
+                Mi objetivo es continuar aprendiendo y crear proyectos
+                cada vez más completos.
+            </p>
+
+            <div class="about-tags">
+                <span>Creatividad</span>
+                <span>Lógica</span>
+                <span>Aprendizaje</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section technologies" id="tecnologias">
+        <p class="eyebrow">02 / HERRAMIENTAS</p>
+        <h2>Mis tecnologías<span>.</span></h2>
+
+        <div class="tech-grid">
+            <article class="tech-card html-card">
+                <div class="tech-icon">&lt;/&gt;</div>
+                <h3>HTML</h3>
+                <p>
+                    Utilizo HTML para organizar el contenido
+                    y construir la estructura de las páginas web.
+                </p>
+                <span class="tag">Desarrollo web</span>
+            </article>
+
+            <article class="tech-card css-card">
+                <div class="tech-icon">✳</div>
+                <h3>CSS</h3>
+                <p>
+                    Permite dar estilo a mis páginas con colores,
+                    diseños, animaciones y distribuciones adaptables.
+                </p>
+                <span class="tag">Diseño web</span>
+            </article>
+
+            <article class="tech-card python-card">
+                <div class="tech-icon">Py</div>
+                <h3>Python</h3>
+                <p>
+                    Aprendo a crear programas, trabajar con datos
+                    y resolver problemas mediante código.
+                </p>
+                <span class="tag">Programación</span>
+            </article>
+        </div>
+    </section>
+
+    <section class="section projects" id="proyectos">
+        <p class="eyebrow">03 / MI TRABAJO</p>
+        <h2>Mis proyectos<span>.</span></h2>
+
+        <p class="section-description">
+            Estos son ejemplos de los tipos de proyectos que puedo
+            desarrollar y mejorar mientras continúo aprendiendo.
+        </p>
+
+        <div class="projects-grid">
+            <article class="project-card">
+                <div class="project-visual visual-web">
+                    <span class="visual-code">&lt;HTML&gt;</span>
+                    <span class="visual-symbol">✦</span>
+                </div>
+
+                <div class="project-content">
+                    <p class="project-number">PROYECTO 01 · HTML / CSS</p>
+                    <h3>Página web personal</h3>
+                    <p>
+                        Un sitio web para presentar información,
+                        practicar estilos y organizar contenido.
+                    </p>
+                    <span class="project-status">Proyecto de práctica</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-visual visual-python">
+                    <span class="python-symbol">Py</span>
+                    <div class="terminal-text">
+                        <p>>>> nombre = "Sofía"</p>
+                        <p>>>> print(nombre)</p>
+                        <p class="terminal-output">Sofía</p>
+                    </div>
+                </div>
+
+                <div class="project-content">
+                    <p class="project-number">PROYECTO 02 · PYTHON</p>
+                    <h3>Programa interactivo</h3>
+                    <p>
+                        Un programa de práctica para trabajar con
+                        variables, condiciones y entradas de usuario.
+                    </p>
+                    <span class="project-status">Proyecto de práctica</span>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <div class="project-visual visual-future">
+                    <span>{ }</span>
+                    <span>IDEA → CÓDIGO</span>
+                </div>
+
+                <div class="project-content">
+                    <p class="project-number">PROYECTO 03 · EN PROCESO</p>
+                    <h3>Mi próximo proyecto</h3>
+                    <p>
+                        Nuevos experimentos y proyectos que combinen
+                        programación, creatividad y diseño.
+                    </p>
+                    <span class="project-status">En construcción</span>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="goals section">
+        <div>
+            <p class="eyebrow">04 / MI FUTURO</p>
+            <h2>Siempre hay algo<br>nuevo que <span>crear.</span></h2>
+
+            <p class="goals-description">
+                Quiero continuar aprendiendo y convertir mis
+                conocimientos en proyectos que reflejen mi crecimiento.
+            </p>
+        </div>
+
+        <div class="goal-list">
+            <article>
+                <span>01</span>
+                <div>
+                    <h3>Mejorar en desarrollo web</h3>
+                    <p>Crear sitios web más completos y adaptables.</p>
+                </div>
+            </article>
+
+            <article>
+                <span>02</span>
+                <div>
+                    <h3>Dominar nuevas herramientas</h3>
+                    <p>Seguir practicando Python y aprender nuevas tecnologías.</p>
+                </div>
+            </article>
+
+            <article>
+                <span>03</span>
+                <div>
+                    <h3>Construir proyectos propios</h3>
+                    <p>Aplicar lo aprendido en ideas originales.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="contact section" id="contacto">
+        <p class="eyebrow">¿TIENES UNA IDEA?</p>
+        <h2>Convirtamos ideas<br>en código<span>.</span></h2>
+        <p>
+            Gracias por visitar mi portafolio y conocer mi camino
+            en el desarrollo web y Python.
+        </p>
+        <a href="mailto:tu-correo@ejemplo.com" class="button-primary">
+            Contactarme ↗
+        </a>
+    </section>
+</main>
+
+<footer>
+    <a href="#inicio" class="logo">&lt;SN.dev/&gt;</a>
+    <p>Diseñado con HTML y CSS · Sofía Nario © 2026</p>
+    <a href="#inicio">Volver arriba ↑</a>
+</footer>
+
+</body>
 </html>
